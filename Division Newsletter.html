@@ -1,0 +1,668 @@
+<html>
+<head>
+<title>Division J Newsletter</title>
+<link rel="important stylesheet" href="chrome://messagebody/skin/messageBody.css">
+</head>
+<body>
+
+
+<!DOCTYPE html>
+<html><head>
+    <title></title><!-- the <title> tag shows on email notifications on Android 4.4. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+        
+         /* ensure that clients don't add any padding or spaces around the email design and allow us to style emails for the entire width of the
+preview pane */
+           body,
+           #bodyTable {
+               height:100% !important;
+               width:100% !important;
+               margin:0;
+               padding:0;
+           }
+          
+           /* Ensures Webkit- and Windows-based clients don't automatically resize the email text. */
+           body,
+           table,
+           td,
+           p,
+           a,
+           li,
+           blockquote {
+               -ms-text-size-adjust:100%;
+               -webkit-text-size-adjust:100%;
+           }
+          
+           /* Forces Yahoo! to display emails at full width */
+           .thread-item.expanded .thread-body .body, .msg-body {
+               width: 100% !important;
+               display: block !important;
+           }
+
+       /* Forces Hotmail to display emails at full width */
+       .ReadMsgBody,
+       .ExternalClass {
+               width: 100%;
+               background-color: #f4f4f4;
+       }
+
+       /* Forces Hotmail to display normal line spacing. */
+           .ExternalClass,
+           .ExternalClass p,
+           .ExternalClass span,
+           .ExternalClass font,
+           .ExternalClass td,
+           .ExternalClass div {
+               line-height:100%;
+       }
+
+      /* Resolves webkit padding issue. */
+       table {
+               border-spacing:0;
+       }
+
+       /* Resolves the Outlook 2007, 2010, and Gmail td padding issue, and removes spacing around tables that Outlook adds. */
+       table,
+       td {
+               border-collapse:collapse;
+               mso-table-lspace:0pt;
+               mso-table-rspace:0pt;
+       }
+           
+      
+       /* Corrects the way Internet Explorer renders resized images in emails. */
+       img {
+           -ms-interpolation-mode: bicubic;
+       }
+       
+       /* Ensures images don't have borders or text-decorations applied to them by default. */
+       img,
+       a img {
+           border:0;
+           outline:none;
+           text-decoration:none;       
+       }
+
+       /* Styles Yahoo's auto-sensing link color and border */
+       .yshortcuts a {
+               border-bottom: none !important;
+       }
+      
+       /* Styles the tel URL scheme */
+       a[href^=tel],
+           .mobile_link,
+           .mobile_link a {
+           color:#222222 !important;
+               text-decoration: underline !Important;
+       }
+
+           
+       /* Added for header consistency */
+        h3 {
+            font-family: sans-serif;
+            font-size: 22px; 
+            line-height: 28px; 
+            color: #444444;
+           font-weight: 700;
+        }
+           
+           
+       /* Media queries for when the viewport is smaller than the default email width but not too narrow. */
+       @media screen and (max-device-width: 600px), screen and (max-width: 600px) {
+
+               /* Constrains email width for small screens */
+               table[class="email-container"] {
+                  width: 100% !important;
+                   max-width: 100% !important;
+                   height: auto !important;            }
+               /* Constrains tables for small screens */
+               table[class="fluid"] {
+                   width: 100% !important;
+               }
+            
+               /* Forces images to resize to full width of their container */
+               img[class="fluid"],
+               img[class="force-col-center"] {
+                  width: 100% !important;
+                   max-width: 100% !important;
+                   height: auto !important;
+               }
+               /* And centers these ones */
+                   img[class="force-col-center"] {
+                   margin: auto !important;
+               }
+              
+               /* Forces table cells into rows */
+               td[class="force-col"],
+               td[class="force-col-center"] {
+                   display: block !important;
+                   width: 100% !important;
+                   clear: both;
+               }
+               /* And centers these ones */
+               td[class="force-col-center"] {
+                   text-align: center !important;
+               }
+              
+               /* Forces table cells into rows */
+               /* Floats a previously stacked image to the left */
+               img[class="col-3-img-l"] {
+                   float: center;
+                   margin: 0 15px 15px 0;
+               }
+               /* Floats a previously stacked image to the right */
+               img[class="col-3-img-r"] {
+                   float: center;
+                   margin: 0 0 15px 15px;
+               }
+              
+               /* Makes buttons full width */
+               table[class="button"] {
+                   width: 100% !important;
+               }
+           
+       }
+
+       /* Media queries for when the viewport is narrow. */
+       /* Rules prefixed with 'hh-' (for 'handheld') repeat much of what's above, but these don't trigger until the smaller screen width. */
+       @media screen and (max-device-width: 425px), screen and (max-width: 425px) {
+
+               /* Helper only visible on handhelds. All styles are inline along with a `display:none`, which this class overrides */
+               div[class="hh-visible"] {
+                   display: block !important;
+               }
+              
+               /* Center stuff */
+               div[class="hh-center"] {
+                   text-align: center;
+                   width: 100% !important;
+               }
+              
+               /* Constrain tables for small screens */
+               table[class="hh-fluid"] {
+                   width: 100% !important;
+               }
+              
+               /* Force images to resize to full width of their container */
+               img[class="hh-fluid"],
+               img[class="hh-force-col-center"] {
+                   width: 100% !important;
+                   max-width: 100% !important;
+                   height: auto !important;
+               }
+               /* And center these ones */
+               img[class="hh-force-col-center"] {
+                   margin: auto !important;
+               }
+              
+               /* Force table cells into rows */
+               td[class="hh-force-col"],
+               td[class="hh-force-col-center"] {
+                   display: block !important;
+                   width: 100% !important;
+                   clear: both;
+               }
+               /* And center these ones */
+               td[class="hh-force-col-center"] {
+                   text-align: center !important;
+               }
+              
+               /* Stack the previously floated images */
+               img[class="col-3-img-l"],
+               img[class="col-3-img-r"] {
+                   float: none !important;
+                   margin: 15px auto !important;
+                   text-align: center !important;
+               }
+
+       /* Media queries for iPhone 6 Plus (standard view) Media Query */
+    @media screen and (max-device-width: 414px) and (max-device-height: 776px) {
+
+               /* Helper only visible on handhelds. All styles are inline along with a `display:none`, which this class overrides */
+               div[class="hh-visible"] {
+                   display: block !important;
+               }
+              
+               /* Center stuff */
+               div[class="hh-center"] {
+                   text-align: center;
+                   width: 100% !important;
+               }
+              
+               /* Constrain tables for small screens */
+               table[class="hh-fluid"] {
+                   width: 100% !important;
+               }
+               
+               /* Force images to resize to full width of their container */
+               img[class="hh-fluid"],
+               img[class="hh-force-col-center"] {
+                   width: 100% !important;
+                   max-width: 100% !important;
+                   height: auto !important;
+               }
+               /* And center these ones */
+               img[class="hh-force-col-center"] {
+                   margin: auto !important;
+               }
+              
+               /* Force table cells into rows */
+               td[class="hh-force-col"],
+               td[class="hh-force-col-center"] {
+                   display: block !important;
+                   width: 100% !important;
+                   clear: both;
+               }
+               /* And center these ones */
+               td[class="hh-force-col-center"] {
+                   text-align: center !important;
+               }
+              
+               /* Stack the previously floated images */
+               img[class="col-3-img-l"],
+               img[class="col-3-img-r"] {
+                   float: none !important;
+                   margin: 15px auto !important;
+                   text-align: center !important;
+    }      
+       
+}
+       
+
+       
+       /* Media query for mobile*/
+
+       .headerfallback {
+            font-size:22px!important;
+            font-family:Open Sans, Helvetica, Arial, sans-serif!important;
+            line-height: 28px!important;
+        }
+       
+       
+       
+       
+    @media (max-width: 640px) {
+           *[class=head] {display:table-header-group!important; width:100%!important;text-align:center;}
+    *[class=foot] {display:table-footer-group!important; width:100%!important;}
+        
+        #mobilepaddinglogo {
+            padding-top:0px!important;
+            margin-top:0px!important;
+        }
+        
+       #mobilepaddinglogo2 {
+           border-bottom:0px!important;
+           margin-bottom:-12px!important;
+       }  
+        
+        #imagemobile {
+            padding-top:30px!important;
+            padding-bottom:10px!important;
+        }
+        
+        #featuredtext {
+            padding: 0px 0px 0px 0px!important;
+            margin-bottom:10px!important;
+        }
+        
+        #featuredarticleheader {
+            padding-top:15px!important;
+            padding-bottom:10px!important;
+            font-size: 27px!important; 
+            line-height: 30px!important;
+        }
+
+        .paddingmobile1 {
+            padding-bottom:15px!important;
+
+        }
+        .mobilealt3 {
+            text-align:center;
+        }
+        
+
+    } 
+
+/*Google Fonts
+            @font-face {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 200;
+                src: local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v7/zhcz-_WihjSQC0oHJ9TCYL3hpw3pgy2gAi-Ip7WPMi0.woff)
+format('woff');
+            } 
+        
+ 
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 400;
+                src: local('SourceSansPro-Regular'),
+url(https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlJbPFduIYtoLzwST68uhz_Y.woff2) format('woff');
+            }      */   
+           
+    </style>
+</head>
+<body bgcolor="#F4F4F4" style="margin:0; padding:0; -webkit-text-size-adjust:none; -ms-text-size-adjust:none;">
+    
+        <!--[if mso]>
+        <style type="text/css" media="all"> 
+             /* Outlook Fix Times New Roman Font Fallback */
+             body, table, td, span, p, h1, h2, h3, a, ul, ol { font-family: Arial, Sans-serif !important;}
+           </style>
+        <![endif]-->
+    
+    <!-- HIDDEN PREVIEW TEXT -->
+    
+    
+    <!-- Logo Left, Nav Right, 100% Nav Bar : BEGIN -->
+    <table align="center" bgcolor="#004165" border="0" cellpadding="0" cellspacing="0" role="presentation" style="text-align: center;" width="100%">
+            <tr>
+                <td>
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" class="email-container" role="presentation" style="margin: auto;"
+width="640">
+                            <tr>
+                                <td bgcolor="#004165" class="hh-force-col-center" id="mobilepaddinglogo2" style="text-align: left; padding: 10px 0px
+10px 0px;" valign="middle"><a href="http://echo4.bluehornet.com/ct/94124900:T99hfzbgN:m:1:3122371583:CEE64EBE859684F88A27506D800D29D8:r" style="color:#ffffff; font-family:
+sans-serif;"><img alt="Toastmasters International" class="mobilelogo1" border="0" height="108"
+src="https://echo4.bluehornet.com/cimages/57a4bfc3bec8b4731f16b5448b2b3fa2/toastmasters-logo-3x.png" style="padding:3px; font-family: sans-serif;"
+width="132"></a></td>
+                                <td bgcolor="#004165" class="hh-force-col-center" id="mobilepaddinglogo" style="padding: 10px 0;text-align: right;"
+valign="middle">
+                                    <h3 style="font-family: sans-serif; font-size: 20px; color: #ffffff; text-decoration:none; padding-right:5px;
+padding-bottom: 8px; margin-bottom: 10px; border-bottom: solid thin #668da2;"><strong>Division J Newsletter</strong></h3>
+                                    <span style="font-family: sans-serif;color: #F2DF74; text-decoration:none; padding-right:5px;">October 2017 - Discover & Inspire</span>
+                                </td>
+                            </tr>
+                    </table>
+                </td>
+            </tr>
+    </table><!-- Logo Left, Nav Right, 100% Nav Bar : END --><!-- Logo Left Nav Right + Vertical Padding : BEGIN -->
+    <!-- Logo Left Nav Right + Vertical Padding : END --><!-- Logo Left Nav Right + Vertical Padding : BEGIN -->
+    <table align="center" border="0" cellpadding="0" cellspacing="0" class="email-container" role="presentation" style="margin: auto;" width="640">
+        
+            <tr>
+                <td class="hh-force-col-center" id="featuredarticleheader" style="padding: 0px 0px 0px 0px; text-align: center; font-family:
+sans-serif; font-size: 30px; line-height: 35px; color: #444444;" valign="middle">Our Division Facebook Page is Live !!</td>
+            </tr> 
+        
+    </table><!-- Logo Left Nav Right + Vertical Padding : END --><!-- Email Container : BEGIN --><!-- This table wraps the whole body email within
+it's width (600px), sets the background color (white) and border (thin, gray, solid) -->
+    <table align="center" border="0" cellpadding="0" cellspacing="0" class="email-container" role="presentation" style="border: 0px solid
+#e5e5e5;margin: auto;" width="600">
+        <!-- Single Fluid Image, No Crop : BEGIN -->
+            <tr bgcolor="#FFFFFF">
+                <td class="hh-force-col mobilealt3"><img alt="Two people discussing an issue" border="0" class="fluid" height="390"
+src="https://fviegas2001.github.io/suisse_romande.jpg" style="display: block;
+font-family: sans-serif;" width="640"></td>
+            </tr>
+            <!-- Two Columns, With Padding ==> Stacked Layout : END -->  
+            <!-- Two Columns, With Padding ==> Stacked Layout : BEGIN --> 
+            <tr bgcolor="#FFFFFF">
+                <td align="center" style="border-bottom: 1px solid #e5e5e5; padding: 0px 30px 15px 30px;">
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" class="fluid" role="presentation" width="100%">
+                        
+                            <tr>
+                                <td class="hh-force-col-center" id="featuredtext" style="text-align: center; font-family:  sans-serif; font-size:
+18px; line-height: 22px; color: #444444; padding: 20px 0px 20px 0px;" valign="middle">
+                                    <p style="text-align:center;">Keep up with the lates news of our Division !!! Like us Follow us! Discover the diversity of clubs on our division</p>
+                                </td>
+                            </tr>
+                    </table>
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" class="fluid" role="presentation" width="150">
+                        
+                            <tr>
+                                <td class="hh-force-col" valign="top" width="100%">
+                                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                        
+                                            <tr>
+                                                <td align="center" class="hh-force-col-center" style="width:100%; font-family: sans-serif; font-size:
+16px; line-height: 22px; color: #444444; text-align: left; padding: 0px; margin:0 auto 0;" valign="center">
+                                                    <table align="center" border="0" cellpadding="0" cellspacing="0" class="button"
+role="presentation" style="margin: 0 auto 0;" width="235">
+                                                        
+                                                            <tr>
+                                                                <td align="center" style="-webkit-border-radius: 3px; -moz-border-radius: 3px;
+border-radius: 3px; background-color: #004165; text-align: center;"><a href="https://www.facebook.com/tmsuisseromande/"
+style="color: #ffffff; font-family: sans-serif; font-size: 16px; line-height: 15px; text-align: center; text-decoration: none; display: block;
+padding: 15px 20px; border: 1px solid #004165; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;"><strong>Follow us</strong></a></td>
+                                                            </tr>
+                                                    </table> 
+                                                </td>
+                                            </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- Two Columns, With Padding ==> Stacked Layout : END -->
+
+        <tr bgcolor="#FFFFFF">
+            <td class="paddingmobile1" style="border-bottom: 1px solid #e5e5e5; padding: 0 30px;">
+                <table align="center" border="2" cellpadding="0" cellspacing="0" class="fluid" role="presentation" width="100%">
+                    <tr>
+                                               <td class="hh-force-col-center" bgcolor="#A1C4D8"  id="featuredarticleheader" style="padding: 20px 0px 20px 0px; text-align: center; font-family:
+sans-serif; font-size: 40px; line-height: 30px; color: #660066;" valign="middle"><strong>D   I   S   C   O   V   E   R</strong></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- Two Columns, With Padding ==> Stacked Layout : BEGIN -->
+		 <tr bgcolor="#FFFFFF">
+            <td class="paddingmobile1" style="border-bottom: 1px solid #e5e5e5; padding: 0 30px;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="fluid" role="presentation" width="100%">
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="foot" style="padding: 20px 30px 30px 0px; font-family:  sans-serif; font-size: 18px; line-height: 22px; color:
+#444444; text-align: left;" valign="center">
+                            <div class="hh-center" style="font-size: 22px; line-height: 28px; color: #444444;">
+                                <h3>Upcoming Events on our Division</h3>
+                            </div>
+                            <div class="hh-center" style="margin-bottom:15px;">
+                                <p>Fall contest season is here. Don't miss any event near you! Find our Division Agenda in our Facebook Page.</p>
+                            </div>
+                            <table border="0" cellpadding="0" cellspacing="0" class="button" role="presentation" style="margin: 0;">
+                                <tr>
+                                    <td style="-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background-color: #004165;
+text-align: center;"><a href="https://www.facebook.com/pg/tmsuisseromande/events/?ref=page_internal" style="color: #ffffff; font-family:
+sans-serif; font-size: 15px; line-height: 15px; text-align: center; text-decoration: none; display: block; padding: 15px 20px; border: 1px solid
+#004165; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;"><strong>Get your agenda Here</strong></a></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="head" style="padding: 30px 0 30px 0;" valign="center"><img alt="Facebook events image capture" border="0"
+class="hh-force-col-center" height="200" id="imagemobile"
+src="https://fviegas2001.github.io/contest_events.PNG" style="display: block;margin:
+auto; font-family: sans-serif;" width="200"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+		
+        <tr bgcolor="#FFFFFF">
+            <td class="paddingmobile1" style="border-bottom: 1px solid #e5e5e5; padding: 0 30px;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="fluid" role="presentation" width="100%">
+                    <tr>
+                        <td class="head" style="padding: 30px 0 30px 0;" valign="center"><img alt="Swiss Riviera inaugural session" border="0"
+class="hh-force-col-center" height="200" id="imagemobile"
+src="https://fviegas2001.github.io/swissriviera.png" style="display: block;margin: auto;
+font-family: sans-serif;" width="200"></td>
+                        <td class="head" style="padding: 20px 0px 30px 30px; font-family:  sans-serif; font-size: 18px; line-height: 22px; color:
+#444444; text-align: left;" valign="center">
+                            <div class="hh-center" style="font-size: 22px; line-height: 28px; color: #444444;">
+                                <h3>Featured Club: Swiss Riviera</h3>
+                            </div>
+                            <div class="hh-center" style="margin-bottom:15px;">
+                                <p>Swiss Riviera club was founded in February of 2016. It meets biweekly in Vevey. Discover their Facebook Page. They have a series of good curated videos especially chosen for contest season.</p>
+                            </div>
+                            <table border="0" cellpadding="0" cellspacing="0" class="button" role="presentation" style="margin: 0;">
+                                <tr>
+                                    <td style="-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background-color: #004165;
+text-align: center;"><a href="https://www.facebook.com/swissrivieratm/" style="color: #ffffff; font-family: sans-serif;
+font-size: 15px; line-height: 15px; text-align: center; text-decoration: none; display: block; padding: 15px 20px; border: 1px solid #004165;
+-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;"><strong>Swiss Riviera Club</strong></a></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- Two Columns, With Padding ==> Stacked Layout : END -->
+		 <tr bgcolor="#FFFFFF">
+            <td class="paddingmobile1" style="border-bottom: 1px solid #e5e5e5; padding: 0 30px;">
+                <table align="center" border="2" cellpadding="0" cellspacing="0" class="fluid" role="presentation" width="100%">
+                    <tr>
+                                               <td class="hh-force-col-center" bgcolor="#A1C4D8"  id="featuredarticleheader" style="padding: 20px 0px 20px 0px; text-align: center; font-family:
+sans-serif; font-size: 40px; line-height: 15px; color:  #660066;" valign="middle"><strong>I   N   S   P   I   R   E </strong></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- Two Columns, With Padding ==> Stacked Layout : BEGIN -->
+        <tr bgcolor="#FFFFFF">
+            <td class="paddingmobile1" style="border-bottom: 1px solid #e5e5e5; padding: 0 30px;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="fluid" role="presentation" width="100%">
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="foot" style="padding: 20px 30px 30px 0px; font-family:  sans-serif; font-size: 18px; line-height: 22px; color:
+#444444; text-align: left;" valign="center">
+                            <div class="hh-center" style="font-size: 22px; line-height: 28px; color: #444444;">
+                                <h3>Inspiration: Contest Season is here!</h3>
+                            </div>
+                            <div class="hh-center" style="margin-bottom:15px;">
+                                <p>Why Should I compete ? Inspirational words from our Toastmasters October Magazine.</p>
+                            </div>
+                            <table border="0" cellpadding="0" cellspacing="0" class="button" role="presentation" style="margin: 0;">
+                                <tr>
+                                    <td style="-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background-color: #004165;
+text-align: center;"><a href="https://www.toastmasters.org/magazine/magazine-issues/2017/september-2017/speech-contests" style="color: #ffffff; font-family:
+sans-serif; font-size: 15px; line-height: 15px; text-align: center; text-decoration: none; display: block; padding: 15px 20px; border: 1px solid
+#004165; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;"><strong>Go to article</strong></a></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="head" style="padding: 30px 0 30px 0;" valign="center"><img alt="Club viewing Speech contest" border="0"
+class="hh-force-col-center" height="261" id="imagemobile"
+src="http://echo4.bluehornet.com/cimages/57a4bfc3bec8b4731f16b5448b2b3fa2/you-can-still-catch-every-moment.png" style="display: block;margin: auto;
+font-family: sans-serif;" width="200"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- Two Columns, With Padding ==> Stacked Layout : END -->
+		<!-- Two Columns, With Padding ==> Stacked Layout : BEGIN -->
+        <tr bgcolor="#FFFFFF">
+            <td class="paddingmobile1" style="border-bottom: 1px solid #e5e5e5; padding: 0 30px;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="fluid" role="presentation" width="100%">
+                    <tr>
+                        <td class="head" style="padding: 30px 0 30px 0;" valign="center"><img alt="Photo gallery" border="0"
+class="hh-force-col-center" height="261" id="imagemobile"
+src="https://fviegas2001.github.io/mentor.PNG" style="display: block;margin:
+auto; font-family: sans-serif;" width="200"></td>
+                        <td class="head" style="padding: 20px 0px 30px 30px; font-family:  sans-serif; font-size: 18px; line-height: 22px; color:
+#444444; text-align: left;" valign="center">
+                            <div class="hh-center" style="font-size: 22px; line-height: 28px; color: #444444;">
+                                <h3>Mentoring - Passing on your club legacy</h3>
+                            </div>
+                            <div class="hh-center" style="margin-bottom:15px;">
+                                <p>An inspirational article from Area J1 Director France Aubin. Find out how mentoring benefits your leadership and speaking skills.
+								“When you learn, teach, when you get, give.” Maya Angelou. </p>
+                            </div>
+                            <table border="0" cellpadding="0" cellspacing="0" class="button" role="presentation" style="margin: 0;">
+                                <tr>
+                                    <td style="-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background-color: #004165;
+text-align: center;"><a href="https://www.facebook.com/permalink.php?story_fbid=120588641949972&id=116932415648928" style="color: #ffffff; font-family:
+sans-serif; font-size: 15px; line-height: 15px; text-align: center; text-decoration: none; display: block; padding: 15px 20px; border: 1px solid
+#004165; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;"><strong>View Now</strong></a></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- Two Columns, With Padding ==> Stacked Layout : END -->
+        <!-- Two Columns, With Padding ==> Stacked Layout : BEGIN -->
+        <tr bgcolor="#FFFFFF">
+            <td class="paddingmobile1" style="border-bottom: 1px solid #e5e5e5; padding: 0 30px;">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="fluid" role="presentation" width="100%">
+                    <tr>
+                        <td></td>
+                    </tr>
+
+        <!-- Two Columns, With Padding ==> Stacked Layout : END -->
+        
+        <!-- Two Columns, With Padding ==> Stacked Layout : BEGIN -->
+       
+        <!-- Two Columns, With Padding ==> Stacked Layout : END -->
+        <!-- Two Columns, With Padding ==> Stacked Layout : BEGIN -->
+        
+        <!-- Two Columns, With Padding ==> Stacked Layout : END -->
+        
+        <!-- Two Columns, With Padding ==> Stacked Layout : BEGIN -->
+       
+        <!-- Two Columns, With Padding ==> Stacked Layout : END -->
+
+        
+
+
+            <!-- Full Width, Fluid Column : BEGIN -->
+            <tr>
+                <td>
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                            <tr>
+                                <td class="hh-force-col-center" style="padding-bottom: 20px 0px 20px 0px; text-align: center; font-family: sans-serif;
+font-size: 20px; line-height: 22px; no-repeat 0px 0px; color:#772432; text-decoration: none;" valign="middle">
+                                    <a href="http://echo4.bluehornet.com/ct/94124910:T99hfzbgN:m:1:3122371583:CEE64EBE859684F88A27506D800D29D8:r" style="color: #772432;
+text-decoration: none;">
+                                    <p style="padding:0;margin-bottom:15px;margin-top:15px; text-align:center; font-family: sans-serif;">See Division Suisse Romande News</p>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" height="100%" style="padding: 0; font-family: Open Sans, Helvetica, Arial,
+sans-serif;max-width:640px;" valign="top" width="100%">                                <!--[if (gte mso 9)|(IE)]>
+                                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+                                <tr>
+                                <td align="center" valign="top" width="600">
+                                <![endif]-->
+                                    <p style="font-family: Open Sans, Helvetica, Arial, sans-serif; margin:0; color:#004165; padding: 0; margin:0;">
+                                    <strong>Connect with us:</strong></p> 
+                                    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width:600px;"
+width="100%">
+                                            <tr>
+                                                <td class="hh-force-col-center" style="padding: 5px 0;text-align: center; font-family: sans-serif;"
+valign="middle">
+<a href="https://www.facebook.com/tmsuisseromande/"><img
+alt="Toastmasters Facebook" border="0" height="30"
+src="https://echo4.bluehornet.com/cimages/57a4bfc3bec8b4731f16b5448b2b3fa2/toastmasters-facebook-icon-blue_2x.png?1453493249"
+width="30"></a>
+        
+                                                    
+                                                </td>
+                                            </tr>
+                                    </table>
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                	</tr>
+									</table>
+                                    <![endif]-->                                
+                                </td>
+                            </tr>
+                    </table>
+                </td>
+            </tr><!-- Full Width, Fluid Column : END -->
+    </table><!-- Email Container : END -->
+</body></html>
+
+
+
+</body>
+</html>
